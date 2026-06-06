@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a2a0a 0%, #0d3b1a 40%, #0a1f3e 80%, #06120a 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 2rem 1rem; font-family: 'Poppins', sans-serif;
+    overflow: hidden; position: relative;
+  }
+  .stars { position: fixed; top:0; left:0; right:0; bottom:0; pointer-events:none; z-index:0; }
+  .star { position: absolute; background: white; border-radius: 50%; animation: twinkle var(--d) ease-in-out infinite alternate; }
+  @keyframes twinkle { 0%{opacity:0.2;transform:scale(1)} 100%{opacity:1;transform:scale(1.4)} }
+  .fheart { position:fixed; font-size:1.2rem; animation: floatUp var(--d) ease-in forwards; opacity:0; z-index:1; }
+  @keyframes floatUp {
+    0%{opacity:0;transform:translateY(100vh) scale(0.5)}
+    20%{opacity:0.8} 80%{opacity:0.4}
+    100%{opacity:0;transform:translateY(-10vh) scale(1.2)}
+  }
+  .card {
+    position: relative; z-index: 2;
+    background: rgba(255,255,255,0.05); backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 28px;
+    padding: 3rem 2.5rem; max-width: 560px; width: 100%; text-align: center;
+    box-shadow: 0 0 80px rgba(0,200,100,0.15), 0 20px 60px rgba(0,0,0,0.5);
+    animation: fadeIn 1.2s ease forwards;
+  }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+  .hearts-top { font-size:1.6rem; margin-bottom:0.5rem; animation: bounce 1.5s ease-in-out infinite; }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  .happy { font-size:1rem; font-weight:600; letter-spacing:0.3em; color:#a8ffcc; text-transform:uppercase; margin-bottom:0.3rem; }
+  .birthday-title {
+    font-family:'Dancing Script',cursive; font-size:4rem;
+    background: linear-gradient(90deg,#ffd700,#ff9f43,#ffd700);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text; line-height:1.1; margin-bottom:0.2rem;
+    animation: shimmer 3s ease infinite; background-size:200% auto;
+  }
+  @keyframes shimmer { 0%{background-position:0% center} 50%{background-position:100% center} 100%{background-position:0% center} }
+  .name { font-family:'Dancing Script',cursive; font-size:3rem; color:#4fffb0; margin-bottom:0.5rem; animation: glow 2.5s ease-in-out infinite alternate; }
+  @keyframes glow { from{text-shadow:0 0 15px rgba(79,255,176,0.4)} to{text-shadow:0 0 40px rgba(79,255,176,0.9),0 0 70px rgba(0,255,150,0.4)} }
+  .divider { display:flex; align-items:center; gap:12px; margin:1.2rem 0; opacity:0.5; }
+  .divider::before,.divider::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,transparent,#4fffb0,transparent); }
+  .poem-line { font-size:1rem; line-height:2.1; color:rgba(255,255,255,0.9); }
+  .gold { color:#ffd700; font-weight:600; font-size:1.05rem; }
+  .green { color:#4fffb0; font-weight:600; font-size:1.05rem; }
+  .dua-box { background:rgba(255,255,255,0.06); border:1px solid rgba(255,215,0,0.2); border-radius:18px; padding:1.4rem 1.6rem; margin-top:1.4rem; }
+  .dua-line { font-size:0.95rem; line-height:2; color:#ffd700; }
+  .ameen { font-size:1rem; color:rgba(255,255,255,0.7); margin-top:0.6rem; font-style:italic; }
+  .bottom-hearts { display:flex; justify-content:center; gap:10px; margin-top:1.6rem; font-size:1.4rem; animation:bounce 2s ease-in-out infinite; }
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div id="fhearts"></div>
+<div class="card">
+  <div class="hearts-top">🎂 🎉 🎁</div>
+  <div class="happy">Happy</div>
+  <div class="birthday-title">Birthday!</div>
+  <div class="name">Abdullah 💚</div>
+  <div class="divider"><span>✨</span></div>
+  <div style="margin-bottom:1.4rem">
+    <div class="poem-line">Abdullah, yaar hona tum jaisa ek nemat hai,</div>
+    <div class="poem-line gold">Sachche dost milte hain toh zindagi haseen lagti hai.</div>
+    <div class="poem-line">Har mushkil mein saath dene wala,</div>
+    <div class="poem-line gold">Aisa dost hi asli daulat hai.</div>
+  </div>
+  <div class="divider"><span>🌟</span></div>
+  <div style="margin-bottom:1.4rem">
+    <div class="poem-line">Tum ho toh har pal mein mazaa hai,</div>
+    <div class="poem-line green">Dosti ka yeh rishta bahut khaas hai.</div>
+    <div class="poem-line">Aaj ke din dil se yahi duaa hai,</div>
+    <div class="poem-line green">Abdullah ki khushiyaan hamesha badhti rahe!</div>
+  </div>
+  <div class="dua-box">
+    <div class="dua-line">🤲 Allah Pak aapko lambi, sehatmand</div>
+    <div class="dua-line">aur khushiyon bhari zindagi ata farmaye.</div>
+    <div class="dua-line">Aapki har dua qubool ho,</div>
+    <div class="dua-line">har sapna pura ho.</div>
+    <div class="ameen">— Ameen. 🤲</div>
+  </div>
+  <div class="bottom-hearts">💚 🌟 💛 🤝 ✨ 🎊</div>
+</div>
+<script>
+  const starsEl=document.getElementById('stars');
+  for(let i=0;i<80;i++){
+    const s=document.createElement('div');s.className='star';
+    const size=Math.random()*2.5+0.5;
+    s.style.cssText=`width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${(Math.random()*3+1.5).toFixed(1)}s;animation-delay:${(Math.random()*4).toFixed(1)}s`;
+    starsEl.appendChild(s);
+  }
+  const emojis=['💚','🌟','💛','✨','🎊','🤝','🎂'];
+  const fEl=document.getElementById('fhearts');
+  function spawnHeart(){
+    const h=document.createElement('div');h.className='fheart';
+    h.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    h.style.cssText=`left:${Math.random()*100}%;bottom:-10%;--d:${(Math.random()*6+5).toFixed(1)}s`;
+    fEl.appendChild(h);setTimeout(()=>h.remove(),12000);
+  }
+  for(let i=0;i<12;i++)setTimeout(spawnHeart,i*600);
+  setInterval(spawnHeart,1500);
+</script>
+</body>
+</html>
